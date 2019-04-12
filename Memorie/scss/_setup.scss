@@ -1,0 +1,68 @@
+// sass-lint:disable no-url-domains, no-url-protocols
+@charset 'UTF-8';
+
+//=================================================
+//	Fonts
+//=================================================
+@import url('http://use.typekit.net/rqn2exo.css');
+
+// =================================================
+// 	Setup
+// =================================================
+$primair-font: Ingra, sans-serif;
+
+$breakpoints: (
+  small: 320px,
+  // Small phone
+  medium: 540px,
+  // Big phone / small tablet
+  large: 768px,
+  // Large tablet
+  xlarge: 1024px
+  // Desktop
+);
+
+$colors: (
+  primary: rgba(255, 255, 224, 1),
+  primaryDark: rgba(34, 83, 120, 1),
+  contrast: rgba(195, 197, 46, 1),
+  font: #000
+);
+
+$spaces: (
+  small: 1.5rem
+);
+
+// ================================================
+// 	Defaults
+// ================================================
+html {
+  color: map-get($colors, fontColor);
+  font-family: $primair-font;
+  font-size: 100%;
+}
+
+#wrapper {
+  position: relative;
+  clear: both;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+// ================================================
+// 	Functies
+// ================================================
+@mixin breakpoint($point) {
+  @if $point == small {
+    @media(max-width: map-get($breakpoints, $point)) {
+      @content;
+    }
+  } @else {
+    @media(min-width: map-get($breakpoints, $point)) {
+      @content;
+    }
+  }
+}
+@mixin transition($property) {
+  transition: $property .5s ease-in-out;
+}

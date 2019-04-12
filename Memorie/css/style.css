@@ -1,0 +1,251 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("http://use.typekit.net/rqn2exo.css");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+html {
+  font-family: Ingra, sans-serif;
+  font-size: 100%;
+}
+
+#wrapper {
+  position: relative;
+  clear: both;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+h1,
+p {
+  color: inherit;
+}
+
+h1 {
+  padding-bottom: 2rem;
+  font-size: 2rem;
+}
+
+p {
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+#welcome {
+  margin: 2rem auto 0;
+  border: solid 3px #fafae5;
+  background-color: lightyellow;
+  padding: 1.5rem;
+  width: 500px;
+  text-align: center;
+}
+#welcome button {
+  margin: 0 0.5rem 1rem 0;
+  border: solid 3px #fafae5;
+  background-color: lightyellow;
+  padding: 5px 15px;
+  font-size: 1rem;
+}
+#welcome button:nth-of-type(3), #welcome button:nth-of-type(5) {
+  margin-right: 0;
+}
+#welcome button.play {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+}
+
+#board {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  width: 800px;
+}
+#board .flip-card {
+  transform: rotateY(0deg);
+  margin: 3px;
+  border: 3px solid #f1f1f1;
+  background-color: transparent;
+  box-sizing: border-box;
+  perspective: 1000px;
+}
+#board .flip-card .flip-card-inner {
+  position: relative;
+  transition: transform 0.8s;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform-style: preserve-3d;
+}
+#board .flip-card .flip-card-inner .flip-card-front,
+#board .flip-card .flip-card-inner .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+#board .flip-card .flip-card-inner .flip-card-back {
+  transform: rotateY(180deg);
+}
+#board .flip-card .flip-card-inner .flip-card-back {
+  background-color: #FFF;
+}
+
+.small .flip-card {
+  width: 190px;
+  height: 190px;
+}
+.small .flip-card img {
+  width: inherit;
+  height: inherit;
+}
+
+.medium .flip-card {
+  width: 125px;
+  height: 125px;
+}
+.medium .flip-card img {
+  width: inherit;
+  height: inherit;
+}
+
+.large .flip-card {
+  width: 85px;
+  height: 85px;
+}
+.large .flip-card img {
+  width: inherit;
+  height: inherit;
+}
+
+#winMesWrapper {
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 800px;
+  height: 800px;
+}
+#winMesWrapper #winMes {
+  margin: auto;
+  border: solid 3px #fafae5;
+  background-color: lightyellow;
+  padding: 3rem;
+}
+#winMesWrapper #winMes #winner {
+  padding-bottom: 2rem;
+}
+#winMesWrapper #winMes #winner h1 {
+  font-size: 2rem;
+}
+#winMesWrapper #winMes #winner p {
+  font-size: 1.5rem;
+}
+#winMesWrapper #winMes div {
+  padding-bottom: 1rem;
+}
+#winMesWrapper #winMes div h1 {
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+}
+#winMesWrapper #winMes div p {
+  font-size: 1rem;
+}
+#winMesWrapper #winMes .restart {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  border: solid 3px #fafae5;
+  background-color: lightyellow;
+  padding: 5px 15px;
+  font-size: 1rem;
+}
+
+.score-board {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  /* border: solid 3px #fafae5;
+  // background-color: lightyellow; */
+  padding: 40px 45px;
+}
+.score-board div {
+  transform-origin: center;
+}
+.score-board div h1 {
+  padding-bottom: 1rem;
+}
+.score-board div h2 {
+  padding-bottom: 2rem;
+  font-size: 1.5rem;
+}
+.score-board div:last-of-type h2 {
+  padding-bottom: 0;
+}
+
+button {
+  outline: none;
+  box-sizing: border-box;
+}
+
+.htmlPlayers {
+  transition: transform 0.5s ease-in-out;
+}
+
+/*# sourceMappingURL=style.css.map */

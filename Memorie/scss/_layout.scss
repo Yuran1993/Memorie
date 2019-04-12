@@ -1,0 +1,206 @@
+h1,
+p {
+  color: inherit;
+}
+
+h1 {
+  padding-bottom: 2rem;
+  font-size: 2rem;
+}
+
+p {
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+#welcome {
+  margin: 2rem auto 0;
+  border: solid 3px desaturate(map-get($colors, primary), 30%);
+  background-color: map-get($colors, primary);
+  padding: 1.5rem;
+  width: 500px;
+  text-align: center;
+
+  button {
+    margin: 0 .5rem 1rem 0;
+    border: solid 3px desaturate(map-get($colors, primary), 30%);
+    background-color: map-get($colors, primary);
+    padding: 5px 15px;
+    font-size: 1rem;
+
+    &:nth-of-type(3),
+    &:nth-of-type(5) {
+      margin-right: 0;
+    }
+
+    &.play {
+      display: block;
+      margin: 0 auto;
+      margin-top: 1.5rem;
+      padding: 10px 20px;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+#board {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  width: 800px;
+
+  .flip-card {
+    transform: rotateY(0deg);
+    margin: 3px;
+    border: 3px solid #f1f1f1;
+    background-color: transparent;
+    box-sizing: border-box;
+    perspective: 1000px;
+
+    .flip-card-inner {
+      position: relative;
+      transition: transform .8s;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transform-style: preserve-3d;
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+      }
+
+      .flip-card-back {
+        transform: rotateY(180deg);
+        background-color: #FFF;
+      }
+    }
+  }
+}
+
+.small {
+  .flip-card {
+    width: 190px;
+    height: 190px;
+
+    img {
+      width: inherit;
+      height: inherit;
+    }
+  }
+}
+
+.medium {
+  .flip-card {
+    width: 125px;
+    height: 125px;
+
+    img {
+      width: inherit;
+      height: inherit;
+    }
+  }
+}
+
+.large {
+  .flip-card {
+    width: 85px;
+    height: 85px;
+
+    img {
+      width: inherit;
+      height: inherit;
+    }
+  }
+}
+
+#winMesWrapper {
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, .9);
+  width: 800px;
+  height: 800px;
+
+  #winMes {
+    margin: auto;
+    border: solid 3px desaturate(map-get($colors, primary), 30%);
+    background-color: map-get($colors, primary);
+    padding: 3rem;
+
+    #winner {
+      padding-bottom: 2rem;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    div {
+      padding-bottom: 1rem;
+
+      h1 {
+        padding-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .restart {
+      display: block;
+      margin: 0 auto;
+      margin-top: 1.5rem;
+      border: solid 3px desaturate(map-get($colors, primary), 30%);
+      background-color: map-get($colors, primary);
+      padding: 5px 15px;
+      font-size: 1rem;
+    }
+  }
+}
+
+.score-board {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  border: solid 3px desaturate(map-get($colors, primary), 30%);
+  background-color: map-get($colors, primary);
+  padding: 40px 45px;
+
+  div {
+    transform-origin: center;
+
+    h1 {
+      padding-bottom: 1rem;
+    }
+
+    h2 {
+      padding-bottom: 2rem;
+      font-size: 1.5rem;
+    }
+
+    &:last-of-type {
+      h2 {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+button {
+  outline: none;
+  box-sizing: border-box;
+}
+
+.html-players {
+  @include transition(transform);
+}
